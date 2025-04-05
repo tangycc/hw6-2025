@@ -56,15 +56,16 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 // mute button
 document.querySelector("#mute").addEventListener("click", function() {
-	let button =document.querySelector("#mute");
-	if (video.muted === true) {
+	let button = document.querySelector("#mute");
+	if (video.muted) {
 		video.muted = false;
 		console.log("Unmute!!!!");
-		button.textContent = "Unmute";
+		button.textContent = "Mute";
 	} else {
+		// mute
 		video.muted = true;
 		console.log("Mute!!!!");
-		button.textContent = "Mute";
+		button.textContent = "Unmute";
 	}
 });
 
