@@ -1,10 +1,14 @@
 var video;
 video = document.querySelector("#player1");
 
+
 // reference: https://www.w3schools.com/tags/ref_av_dom.asp
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
-
+	video.loop = false;
+	console.log("Loop is set to false");
+	video.autoplay = false;
+	console.log("Autoplay is set to false");
 });
 
 // slower button
@@ -25,6 +29,9 @@ document.querySelector("#faster").addEventListener("click", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video!!!!");
 	video.play();
+
+	let volumeText = document.querySelector("#volume")
+	volumeText.textContent = (video.volume * 100) + "%";
 });
 
 // pause button
